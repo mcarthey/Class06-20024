@@ -18,11 +18,18 @@ public class MainService : IMainService
 
     public void Invoke()  // consider this your Program.cs Main
     {
-        //Wrapper wrapper (hold onto context)
-        MediaContext context = new MediaContext();
+        // 1. This example uses the Repository and Context and a simple Search() method as done in class
+        Console.WriteLine("** Example #1: Using Media Context");
+        MediaContext context = new MediaContext();                  //Wrapper wrapper (hold onto context)
         Repository repo = new Repository(context);
+        repo.Search();                                              //wrapper => execute methods to Search
 
-        //wrapper => execute methods to Search
-        repo.Search();
+        Console.WriteLine();
+
+        // 2. This example replaces the Context wrapper and creates a MediaManager wrapper that has one C# class
+        Console.WriteLine("** Example #2: Using a more simple 'MediaManager'");
+        MediaManager manager = new MediaManager();
+        manager.Search();
+
     }
 }

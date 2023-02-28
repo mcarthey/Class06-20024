@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Class0620024.Context
 {
+    // This is our 'wrapper'  as used in Example #1 called from MainService.cs
     public class Repository 
     {
         private MediaContext _mediaContext;
@@ -22,7 +23,7 @@ namespace Class0620024.Context
             Console.WriteLine("Which media would you like to display?");
             var userInput = Console.ReadLine();
 
-            Media result = _mediaContext.Movies.FirstOrDefault(media => media.Title.Contains(userInput));
+            Media result = _mediaContext.Movies.FirstOrDefault(media => media.Title.Contains(userInput, StringComparison.CurrentCultureIgnoreCase));
 
             Console.WriteLine($"Your result: {result.Title}");
 
