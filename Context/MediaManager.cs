@@ -54,14 +54,14 @@ namespace Class0620024.Context
             {
                 if (show.Title.Contains(userInput, StringComparison.InvariantCultureIgnoreCase))
                 {
-                    Console.WriteLine($"Movie: {show}");
+                    Console.WriteLine($"Show: {show}");
                 }
             }
             foreach (var video in Videos)
             {
                 if (video.Title.Contains(userInput, StringComparison.InvariantCultureIgnoreCase))
                 {
-                    Console.WriteLine($"Movie: {video}");
+                    Console.WriteLine($"Video: {video}");
                 }
             }
 
